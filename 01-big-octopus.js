@@ -48,13 +48,23 @@ function nlognBiggestFish(fishes) {
   let sortedArray = [...leftSorted, pivot, ...rightSorted];
 return sortedArray;
 }
-console.log(nlognBiggestFish(fishies).pop());
+//console.log(nlognBiggestFish(fishies).pop());
 
 
 function linearBiggestFish(fishes) {
-  // Code goes here ...
+  
+  //return fishes.sort(function (a, b) { return b.length - a.length })[0]
+  let lgth = 0;
+  let longest;
+  for(let i = 0; i< fishes.length; i++){
+    if(fishes[i].length > lgth){
+      lgth = fishes[i].length;
+      longest = fishes[i]
+    }
+  }
+  return longest;
 }
-
+console.log(linearBiggestFish(fishies))
 
 tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
 function slowDance(direction, tilesArray) {
